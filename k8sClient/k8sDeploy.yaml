@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  restartPolicy: Never
+  containers:
+  - image: python:3
+    name: pythoncontainer
+    command: ["python3"]
+    args: ["/mnt/azure/service.py"]
+    volumeMounts:
+      - name: azure
+        mountPath: /mnt/azure
+  volumes:
+  - name: azure
+    azureFile:
+      secretName: azure-secret
+      shareName: aksshare
+      readOnly: false

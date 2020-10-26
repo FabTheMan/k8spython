@@ -1,0 +1,2 @@
+See the following article to get kubeconfig file (here the config file has been renamed as myConfig):
+https://docs.microsoft.com/en-us/azure/aks/control-kubeconfig-access
